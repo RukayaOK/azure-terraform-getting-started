@@ -27,6 +27,7 @@ jobs:
         ARM_CLIENT_ID: "${{ secrets.AZURE_CLIENT_ID }}"
         ARM_SUBSCRIPTION_ID: "${{ secrets.TF_VAR_BACKEND_SUBSCRIPTION_ID }}"
         ARM_TENANT_ID: "${{ secrets.AZURE_TENANT_ID }}"
+        TF_VAR_RESOURCE_SUBSCRIPTION: "${{ secrets.RESOURCE_SUBSCRIPTION }}"
 
     - name: Terraform Plan
       id: plan
@@ -35,6 +36,7 @@ jobs:
         ARM_CLIENT_ID: "${{ secrets.AZURE_CLIENT_ID }}"
         ARM_SUBSCRIPTION_ID: "${{ secrets.AZURE_SUBSCRIPTION_ID }}"
         ARM_TENANT_ID: "${{ secrets.AZURE_TENANT_ID }}"
+        TF_VAR_RESOURCE_SUBSCRIPTION: "${{ secrets.RESOURCE_SUBSCRIPTION }}"
     
     - name: Terraform Apply
       id: apply
@@ -43,3 +45,4 @@ jobs:
         ARM_CLIENT_ID: "${{ secrets.AZURE_CLIENT_ID }}"
         ARM_SUBSCRIPTION_ID: "${{ secrets.AZURE_SUBSCRIPTION_ID }}"
         ARM_TENANT_ID: "${{ secrets.AZURE_TENANT_ID }}"
+        TF_VAR_RESOURCE_SUBSCRIPTION: "${{ secrets.RESOURCE_SUBSCRIPTION }}"
