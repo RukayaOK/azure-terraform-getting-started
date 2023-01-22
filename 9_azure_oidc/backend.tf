@@ -10,7 +10,7 @@ terraform {
     storage_account_name = "terrates901"
     container_name       = "state"
     key                  = "oidc.tfstate"
-    #use_oidc = true
+    use_oidc = true
   }
 
 }
