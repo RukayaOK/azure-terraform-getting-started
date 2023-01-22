@@ -1,0 +1,34 @@
+name: Destroy
+on: [workflow_dispatch]
+
+permissions:
+  id-token: write
+  contents: read
+      
+jobs: 
+  destroy:
+    runs-on: ubuntu-latest
+    env:
+      ARM_CLIENT_ID: "${{ secrets.AZURE_CLIENT_ID }}"
+      ARM_SUBSCRIPTION_ID: "${{ secrets.TF_VAR_BACKEND_SUBSCRIPTION_ID }}"
+      ARM_TENANT_ID: "${{ secrets.AZURE_TENANT_ID }}"
+      TF_VAR_RESOURCE_SUBSCRIPTION: "${{ secrets.TF_VAR_RESOURCE_SUBSCRIPTION }}"
+    defaults:
+      run:
+        working-directory: 10_azure_oidc
+
+    steps:
+    
+    - name: Check out code
+      uses: actions/checkout@v2
+    
+    - name: HashiCorp - Setup Terraform
+      uses: hashicorp/setup-terraform@v2.0.3
+          
+    - name: Terraform Init
+      id: init
+      run: terraform init
+    
+    - name: Terraform Destroy
+      id: destroy
+      run: terraform destroy -auto-approve
