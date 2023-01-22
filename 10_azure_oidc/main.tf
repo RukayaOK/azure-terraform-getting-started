@@ -1,4 +1,4 @@
 resource "azurerm_resource_group" "main" {
-  name     = "example-rg"
+  name     = "new-example-rg"
   location = "uksouth"
 }
