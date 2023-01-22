@@ -1,6 +1,8 @@
 # Terraform Setup 
 
 ## Contents 
+- [Terraform Setup](#terraform-setup)
+  - [Contents](#contents)
   - [Prerequisites](#prerequisites)
   - [Terraform Setup](#terraform-setup-1)
   - [Automation](#automation)
@@ -218,7 +220,7 @@ You will have an azure subscription ID
     The storage account key should be set below
 
     ```bash
-    export ARM_ACCESS_KEY="66e3c592-2e3c-4a3c-bd56-1412ef3f08ta"
+    export ARM_ACCESS_KEY="66e3c592-2e3c-4a3c-1971-1412ef3f08ta"
     ```
 
 You are now ready to start terraforming.
