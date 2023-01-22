@@ -20,6 +20,9 @@ jobs:
     
     - name: Check out code
       uses: actions/checkout@v2
+    
+    - name: HashiCorp - Setup Terraform
+      uses: hashicorp/setup-terraform@v2.0.3
         
     - name: Terraform Init
       id: init
