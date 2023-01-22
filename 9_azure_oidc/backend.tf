@@ -10,10 +10,13 @@ terraform {
     storage_account_name = "terrates901"
     container_name       = "state"
     key                  = "oidc.tfstate"
+    use_oidc = true
   }
 
 }
 
 provider "azurerm" {
+  use_oidc = true
+  skip_provider_registration = true
   features {}
 }
