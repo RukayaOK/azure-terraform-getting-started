@@ -6,7 +6,6 @@ terraform {
     }
   }
   backend "azurerm" {
-    subscription_id = var.backend_subscription_id
     resource_group_name  = "rok-terraform-rg-do-not-delete"
     storage_account_name = "terrates901"
     container_name       = "state"
