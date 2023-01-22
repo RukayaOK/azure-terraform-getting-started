@@ -19,4 +19,9 @@ provider "azurerm" {
   use_oidc = true
   skip_provider_registration = true
   features {}
+  subscription_id = var.RESOURCE_SUBSCRIPTION
+}
+
+variable RESOURCE_SUBSCRIPTION {
+  type        = string
 }
