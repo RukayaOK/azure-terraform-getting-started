@@ -42,10 +42,10 @@ You will have an azure subscription ID
     ```bash
     SERVICE_PRINCIPAL_NAME=my-service-principal
 
-    az ad app list \
-        --display-name "${SERVICE_PRINCIPAL_NAME}" \
-        --query '[].appId' \
-        -o tsv
+    az ad sp create-for-rbac \
+      --name "${SERVICE_PRINCIPAL_NAME}" \
+      --role Contributor \
+      --scopes /subscriptions/"${ARM_SUBSCRIPTION_ID}"
     ```
 
     Example output:
